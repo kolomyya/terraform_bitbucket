@@ -41,6 +41,11 @@ resource "kubernetes_deployment" "bitbucket-deployment" {
             name           = "bitbucket-http"
             container_port = 7990
           }
+
+          volume_mount {
+            name       = "bitbucket-pvc"
+            mount_path = "/var/lib/bitbucket"
+          }
         }
       }
     }
