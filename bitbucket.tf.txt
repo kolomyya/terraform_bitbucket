@@ -46,6 +46,7 @@ resource "kubernetes_deployment" "bitbucket-deployment" {
             name       = "bitbucket-pvc"
             mount_path = "/var/lib/bitbucket"
           }
+          image_pull_policy = "IfNotPresent"
         }
       }
     }
